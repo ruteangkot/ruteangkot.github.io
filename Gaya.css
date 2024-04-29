@@ -30,17 +30,17 @@ footer {
   position: relative;
   text-align: center;
 }
-th,
 td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 th {
   background-color: #33ff00;
   font-weight: bold;
   text-align: center;
+  font-weight: bold;
 }
 
 tr:nth-child(even) {
@@ -48,7 +48,7 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-  background-color: #b8b3b3;
+  background-color: #1bff26ec;
 }
 input {
   width: 100%;
