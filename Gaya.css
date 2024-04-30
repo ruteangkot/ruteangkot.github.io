@@ -37,7 +37,7 @@ td {
 }
 
 th {
-  background-color: #33ff00;
+  background-color: #4b4b4b;
   font-weight: bold;
   text-align: center;
   font-weight: bold;
@@ -48,7 +48,7 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-  background-color: #1bff26ec;
+  background-color: #636363;
 }
 input {
   width: 100%;
