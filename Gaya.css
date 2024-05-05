@@ -2,11 +2,13 @@
 
 html {
   font-size: 1vw;
+  table-layout: 1vw;
 }
 
 @media (max-width: 767px) {
   html {
     font-size: 2vw;
+    table-layout: 2vw;
   }
 }
 

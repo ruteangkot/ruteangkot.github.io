@@ -1,25 +1,29 @@
-import { get } from "https://jscroot.github.io/api/croot.js";
-import { setInner, addChild } from "https://jscroot.github.io/element/croot.js";
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+const url = "https://ruteangkot.github.io/";
 
-export let URLGeoJson = "../data/data.json";
-export let tableTag = "tr";
-export let tableRowClass = "content is-small";
-export let tableTemplate = `
-<td>#Rute#</td>
-<td>#Jam Operasional#</td>
-<td>#Tarif#</td>
-`;
-
-export function responseData(results) {
-  console.log(result);
-  reslut.features.forEach(12);
-}
-
-export function isiRow(value) {
-  let content = tableTemplate
-    .replace("#Rute#", value)
-    .replace("#Jam Operasional#", value)
-    .replace("#Tarif#", value);
-  console.log(content);
-  addChild("lokasi", tableTag, tableRowClass, content);
-}
+fetch("./data/data.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    const tableData = data.data;
+    const tableHtml = "";
+    tableData.forEach((row) => {
+      tableHtml += `
+        <tr>
+          <td>${row.Rute}</td>
+          <td>${row["Jam Operasional"]}</td>
+          <td>${row.Tarif}</td>
+        </tr>
+      `;
+    });
+    document
+      .getElementById("table-container")
+      .querySelector("tbody").innerHTML = tableHtml;
+  })
+  .catch((error) => {
+    console.error("error:", error);
+  });
