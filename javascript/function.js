@@ -1,29 +1,34 @@
-const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-const url = "https://ruteangkot.github.io/";
+// Membuat objek XMLHttpRequest
+var xhr = new XMLHttpRequest();
 
-fetch("./data/data.json")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+// Mengatur tindakan yang dilakukan ketika permintaan selesai
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === XMLHttpRequest.DONE) {
+    if (xhr.status === 200) {
+      // Jika permintaan berhasil dan status kode adalah 200 (OK)
+      var data = JSON.parse(xhr.responseText);
+      populateTable(data); // Memanggil fungsi untuk menampilkan data dalam tabel
+    } else {
+      console.error("Failed to load JSON file"); // Jika permintaan gagal
     }
-    return response.json();
-  })
-  .then((data) => {
-    const tableData = data.data;
-    const tableHtml = "";
-    tableData.forEach((row) => {
-      tableHtml += `
-        <tr>
-          <td>${row.Rute}</td>
-          <td>${row["Jam Operasional"]}</td>
-          <td>${row.Tarif}</td>
-        </tr>
-      `;
-    });
-    document
-      .getElementById("table-container")
-      .querySelector("tbody").innerHTML = tableHtml;
-  })
-  .catch((error) => {
-    console.error("error:", error);
+  }
+};
+
+// Mengirimkan permintaan GET ke file JSON
+xhr.open("GET", "data.json", true);
+xhr.send();
+
+// Fungsi untuk menampilkan data dalam tabel
+function populateTable(data) {
+  var tableBody = document.querySelector("#data-table tbody");
+  data.forEach((el) => {
+    var row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${el.id}</td>
+      <td>${el.Rute}</td>
+      <td>${el["Jam Operasional"]}</td>
+      <td>${el.Tarif}</td>
+    `;
+    tableBody.appendChild(row);
   });
+}
