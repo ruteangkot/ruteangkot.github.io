@@ -12,7 +12,7 @@ export let tableTemplate = `
 
 export function responseData(results) {
   console.log(result);
-  reslut.features.forEach(5);
+  reslut.features.forEach(10);
 }
 
 export function isiRow(value) {
