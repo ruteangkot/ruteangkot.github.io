@@ -2,13 +2,12 @@
 
 html {
   font-size: 1vw;
-  table-layout: 1vw;
+  table-layout: fixed;
 }
 
 @media (max-width: 767px) {
   html {
     font-size: 2vw;
-    table-layout: 2vw;
   }
 }
 
@@ -23,6 +22,7 @@ html {
   margin-top: 5%;
   border-collapse: collapse;
   width: 100%;
+  overflow-x: auto;
 }
 
 footer {
@@ -40,6 +40,7 @@ td {
 
 th {
   background-color: #4b4b4b;
+  color: #f2f2f2;
   font-weight: bold;
   text-align: center;
   font-weight: bold;
