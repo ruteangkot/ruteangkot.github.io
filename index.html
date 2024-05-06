@@ -18,25 +18,57 @@
             <input
               type="text"
               class="u-full-width"
-              placeholder="Masukkan tujuan..." />
+              placeholder="Masukkan tujuan..."
+            />
           </div>
           <div class="six columns">
             <button class="btn">Cari</button>
           </div>
         </div>
-        <table class="u-full-width">
-          <thead id="data-table">
-            <tr>
-              <th>Rute</th>
-              <th>Jam Operasional</th>
-              <th>Tarif</th>
-            </tr>
-          </thead>
-          <tbody id="table-container"></tbody>
-        </table>
       </main>
     </div>
-    <script src="function.js"></script>
+<div id="data-container">
+    <!-- Data akan ditampilkan di sini -->
+</div>
+
+<script>
+  function loadData() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                  var data = JSON.parse(xhr.responseText);
+                  displayData(data);
+              } else {
+                  console.error('Gagal memuat data: ' + xhr.status);
+              }
+          }
+      };
+      xhr.open('GET', 'data.json', true); 
+      xhr.send();
+  }
+
+  
+  function displayData(data) {
+      var container = document.getElementById('data-container');
+      var html = '';
+
+      
+      html += '<table>';
+      html += '<tr><th>Rute</th><th>Jam Operasional</th><th>Tarif</th></tr>';
+      data.forEach(function(item) {
+          html += '<tr><td>' + item.Rute + '</td><td>' + item["Jam Operasional"] + '</td><td>' + item.Tarif + '</td></tr>';
+      });
+      html += '</table>';
+
+      container.innerHTML = html;
+  }
+
+  
+  window.onload = function() {
+      loadData();
+  };
+</script>
   </body>
   <footer>
     <p class="text-footer">
