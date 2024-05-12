@@ -5,10 +5,21 @@ html {
   table-layout: fixed;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   html {
     font-size: 2vw;
   }
+  table {
+    width: 50%;
+  }
+}
+
+#data-container {
+  text-align: center; 
+}
+
+#data-container table {
+  margin: 0 auto; /
 }
 
 .body {
@@ -25,11 +36,11 @@ html {
 }
 
 .table {
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin: 0 auto;
   border-collapse: collapse;
   width: 100%;
   overflow-x: auto;
+  display: block;
 }
 
 footer {
@@ -62,6 +73,7 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #636363;
+  transform: scale(1,1);
 }
 input {
   width: 100%;
