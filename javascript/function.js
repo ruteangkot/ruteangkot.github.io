@@ -1,29 +1,64 @@
-const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-const url = "https://ruteangkot.github.io/";
-
-fetch("./data/data.json")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+function loadData() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        displayData(data);
+      } else {
+        console.error("Gagal memuat data: " + xhr.status);
+      }
     }
-    return response.json();
-  })
-  .then((data) => {
-    const tableData = data.data;
-    const tableHtml = "";
-    tableData.forEach((row) => {
-      tableHtml += `
-        <tr>
-          <td>${row.Rute}</td>
-          <td>${row["Jam Operasional"]}</td>
-          <td>${row.Tarif}</td>
-        </tr>
-      `;
-    });
-    document
-      .getElementById("table-container")
-      .querySelector("tbody").innerHTML = tableHtml;
-  })
-  .catch((error) => {
-    console.error("error:", error);
+  };
+  xhr.open("GET", "data.json", true);
+  xhr.send();
+}
+
+function displayData(data) {
+  var container = document.getElementById("data-container");
+  var html = "";
+
+  html += "<table>";
+  html += "<tr><th>Rute</th><th>Jam Operasional</th><th>Tarif</th></tr>";
+  data.forEach(function (item) {
+    html +=
+      "<tr><td>" +
+      item.Rute +
+      "</td><td>" +
+      item["Jam Operasional"] +
+      "</td><td>" +
+      item.Tarif +
+      "</td></tr>";
   });
+  html += "</table>";
+
+  container.innerHTML = html;
+}
+
+function cari() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputCari");
+  filter = input.value.toUpperCase();
+  table = document.querySelector("#data-container table");
+  tr = table.getElementsByTagName("tr");
+
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0]; // Mengambil kolom pertama untuk pencarian
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = ""; // Tampilkan baris jika cocok dengan pencarian
+      } else {
+        tr[i].style.display = "none"; // Sembunyikan baris jika tidak cocok
+      }
+    }
+  }
+}
+
+document.getElementById("inputCari").addEventListener("input", function () {
+  cari();
+});
+
+window.onload = function () {
+  loadData();
+};

@@ -1,5 +1,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css");
 
+@import url("https://fonts.googleapis.com/css2?family=Freeman&display=swap");
+
 html {
   font-size: 1vw;
   table-layout: fixed;
@@ -10,7 +12,14 @@ html {
     font-size: 2vw;
   }
   table {
-    width: 50%;
+    width: 100%;
+    margin: 0 auto;
+    table-layout: auto;
+    overflow-x: auto;
+  }
+  .input[type="text"] {
+    width: 90%;
+    padding: 8px;
   }
 }
 
@@ -27,6 +36,7 @@ html {
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: "Freeman", sans-serif;
 }
 
 .text {
@@ -62,10 +72,9 @@ td {
 
 th {
   background-color: #4b4b4b;
-  color: #f2f2f2;
+  color: white;
   font-weight: bold;
   text-align: center;
-  font-weight: bold;
 }
 
 tr:nth-child(even) {
@@ -76,12 +85,18 @@ tr:hover {
   background-color: #636363;
   transform: scale(1, 1);
   color: #f2f2f2;
+  transition: 0.3s;
 }
 input {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid;
   border-radius: 5px;
   font-size: 16px;
+}
+input[type="text"]:focus {
+  border-color: #636363;
+  outline: none;
+  transition: border-color 0.3s;
 }

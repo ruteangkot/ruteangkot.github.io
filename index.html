@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="Gaya.css" />
     <title>Angkot Route Finder</title>
   </head>
-  <body>
+  <body class="body">
     <div class="container">
       <header>
         <h2><img src="#" alt="Logo" /></h2>
@@ -17,65 +17,20 @@
           <div class="six columns">
             <input
               type="text"
+              id="inputCari"
               class="u-full-width"
               placeholder="Masukkan tujuan..." />
           </div>
-          <div class="six columns">
-            <button class="btn">Cari</button>
-          </div>
         </div>
-        <div id="data-container">
-          <!-- Data akan ditampilkan di sini -->
-        </div>
+        <div id="data-container"></div>
       </main>
     </div>
 
-    <script>
-      function loadData() {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-              var data = JSON.parse(xhr.responseText);
-              displayData(data);
-            } else {
-              console.error("Gagal memuat data: " + xhr.status);
-            }
-          }
-        };
-        xhr.open("GET", "data.json", true);
-        xhr.send();
-      }
-
-      function displayData(data) {
-        var container = document.getElementById("data-container");
-        var html = "";
-
-        html += "<table>";
-        html += "<tr><th>Rute</th><th>Jam Operasional</th><th>Tarif</th></tr>";
-        data.forEach(function (item) {
-          html +=
-            "<tr><td>" +
-            item.Rute +
-            "</td><td>" +
-            item["Jam Operasional"] +
-            "</td><td>" +
-            item.Tarif +
-            "</td></tr>";
-        });
-        html += "</table>";
-
-        container.innerHTML = html;
-      }
-
-      window.onload = function () {
-        loadData();
-      };
-    </script>
+    <script src="javascript/function.js"></script>
+    <footer>
+      <p class="text-footer">
+        &copy; 2023 Angkot Route Finder. All rights reserved.
+      </p>
+    </footer>
   </body>
-  <footer>
-    <p class="text-footer">
-      &copy; 2023 Angkot Route Finder. All rights reserved.
-    </p>
-  </footer>
 </html>
