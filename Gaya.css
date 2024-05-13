@@ -15,11 +15,11 @@ html {
 }
 
 #data-container {
-  text-align: center; 
+  text-align: center;
 }
 
 #data-container table {
-  margin: 0 auto; /
+  margin: 0 auto;
 }
 
 .body {
@@ -39,8 +39,8 @@ html {
   margin: 0 auto;
   border-collapse: collapse;
   width: 100%;
-  overflow-x: auto;
   display: block;
+  max-width: max-content;
 }
 
 footer {
@@ -57,6 +57,7 @@ td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
+  width: 10%;
 }
 
 th {
@@ -73,7 +74,8 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #636363;
-  transform: scale(1,1);
+  transform: scale(1, 1);
+  color: #f2f2f2;
 }
 input {
   width: 100%;
