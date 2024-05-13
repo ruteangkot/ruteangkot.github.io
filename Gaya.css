@@ -31,6 +31,10 @@ html {
   margin: 0 auto;
 }
 
+main {
+  margin-bottom: 20%;
+}
+
 .body {
   height: 100vh;
   margin: 0;
@@ -99,4 +103,9 @@ input[type="text"]:focus {
   border-color: #636363;
   outline: none;
   transition: border-color 0.3s;
+}
+
+.hidden {
+  display: none;
+  transition: 0.2s;
 }
