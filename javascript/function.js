@@ -64,21 +64,3 @@ document.getElementById("inputCari").addEventListener("input", function () {
 window.onload = function () {
   loadData();
 };
-
-//Hidden Footer
-document.addEventListener("DOMContentLoaded", function () {
-  var footer = document.getElementById("footer");
-  var mainContent = document.querySelector("main");
-
-  function toggleFooterVisibility() {
-    var contentBottom = mainContent.offsetTop + mainContent.offsetHeight;
-    var footerTriggerPosition = window.innerHeight + window.scrollY;
-    if (footerTriggerPosition >= contentBottom) {
-      footer.classList.remove("hidden");
-    } else {
-      footer.classList.add("hidden");
-    }
-  }
-
-  window.addEventListener("scroll", toggleFooterVisibility);
-});
