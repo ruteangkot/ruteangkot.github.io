@@ -1,62 +1,117 @@
 [
   {
-      "Rute": "Sarijadi - Ciroyom",
-      "Jam Operasional": "05:00 - 22:00",
-      "Tarif": "Rp. 5.000 - 10.000"
+    "Rute": "Antapani - Ciroyom",
+    "Jam Operasional": "24 Jam",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Ciroyom - Kebon kalapa setra",
-      "Jam Operasional": "05:00 - 22:00",
-      "Tarif": "Rp. 5.000 - 10.000"
+    "Rute": "Banjaran - Cimaung",
+    "Jam Operasional": "05:30 - 21:00",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Antapani - Ciroyom",
-      "Jam Operasional": "05:00 - 22:00",
-      "Tarif": "Rp. /"
+    "Rute": "Buah Batu - Bojong Soang",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Kebon Kalapa - Karang Setra",
-      "Jam Operasional": "05:00 - 23:00",
-      "Tarif": "Rp. /"
+    "Rute": "Cibaduyut - Baleendah",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Kebon Kalapa - Cibaduyut",
-      "Jam Operasional": "05:00 - 23:00",
-      "Tarif": "Rp. /"
+    "Rute": "Cibaduyut - Banjaran",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Cicaheum - Ciroyom",
-      "Jam Operasional": "24 Jam",
-      "Tarif": "Rp. /"
+    "Rute": "Cicaheum - Ciroyom",
+    "Jam Operasional": "24 Jam",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Cisitu - Cigalega",
-      "Jam Operasional": "04:30 - 22:00",
-      "Tarif": "Rp. /"
+    "Rute": "Cileunyi - Cicalengka",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Tegalega - Cipatik",
-      "Jam Operasional": "04:30 - 22:00",
-      "Tarif": "Rp. /"
+    "Rute": "Cileunyi - Terminal",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Tegalega - Banjaran",
-      "Jam Operasional": "04:30 - 22:00",
-      "Tarif": "Rp. /"
+    "Rute": "Cimahi - Soreang",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Stasiun Hall - Dago",
-      "Jam Operasional": "04:30 - 18:00",
-      "Tarif": "Rp. /"
+    "Rute": "Cimindi - Marga Asih",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
   },
   {
-      "Rute": "Stasiun Hall - Dago (car free day)",
-      "Jam Operasional": "5:55 - 10:00",
-      "Tarif": "Rp. /"
+    "Rute": "Ciroyom - Kebon kalapa setra",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. 5.000 - 10.000"
   },
   {
-      "Rute": "Stasiun Hall - Gedebage",
-      "Jam Operasional": "04:30 - 22:00",
-      "Tarif": "Rp. /"
+    "Rute": "Ciwastra - Ciparay",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Majalaya - Ciparay",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Majalaya - Ibun",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Pasar Induk gedebage - Majalaya",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Sarijadi - Ciroyom",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. 5.000 - 10.000"
+  },
+  {
+    "Rute": "Soreang - Banjaran",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Stasiun Hall - Dago",
+    "Jam Operasional": "04:30 - 18:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Stasiun Hall - Dago (car free day)",
+    "Jam Operasional": "05:55 - 10:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Stasiun Hall - Gedebage",
+    "Jam Operasional": "04:30 - 22:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Tegalega - Banjaran",
+    "Jam Operasional": "04:30 - 22:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Tegalega - Cipatik",
+    "Jam Operasional": "04:30 - 22:00",
+    "Tarif": "Rp. /"
+  },
+  {
+    "Rute": "Tegalega - Mahmud",
+    "Jam Operasional": "05:00 - 22:00",
+    "Tarif": "Rp. /"
   }
 ]
