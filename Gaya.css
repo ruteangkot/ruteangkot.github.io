@@ -21,6 +21,9 @@ html {
     width: 90%;
     padding: 8px;
   }
+  img {
+    width: 50%;
+  }
 }
 
 #data-container {
