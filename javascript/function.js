@@ -11,7 +11,11 @@ function loadData() {
       }
     }
   };
-  xhr.open("GET", "data.json", true);
+  xhr.open(
+    "GET",
+    "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/data",
+    true
+  );
   xhr.send();
 }
 
