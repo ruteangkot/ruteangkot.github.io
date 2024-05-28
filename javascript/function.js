@@ -5,6 +5,7 @@ function loadData() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
         var data = JSON.parse(xhr.responseText);
+        console.log(data);
         displayData(data);
       } else {
         console.error("Gagal memuat data: " + xhr.status);
