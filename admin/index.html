@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page - Angkot Route Manager</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link rel="stylesheet" href="../styles/admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Angkot Route Manager</h1>
+        <a href="../index.html">Back to Main Page</a>
+        <!-- Link to Main Page -->
+        <button id="logoutBtn">Logout</button>
+      </header>
+      <main>
+        <h2>Manage Routes</h2>
+        <table id="routesTable" class="u-full-width">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Rute</th>
+              <th>Jam Operasional</th>
+              <th>Tarif</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data will be populated here -->
+          </tbody>
+        </table>
+        <button id="addRouteBtn">Add New Route</button>
+      </main>
+      <div id="routeModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modalTitle">Add Route</h2>
+          <form id="routeForm">
+            <input type="hidden" id="routeId" />
+            <label for="rute">Rute</label>
+            <input type="text" id="rute" required />
+            <label for="jamOperasional">Jam Operasional</label>
+            <input type="text" id="jamOperasional" required />
+            <label for="tarif">Tarif</label>
+            <input type="text" id="tarif" required />
+            <button type="submit" id="saveRouteBtn" class="button-primary">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="admin.js"></script>
+  </body>
+</html>
