@@ -90,21 +90,21 @@ main {
   padding: 10px;
 }
 
-input {
+input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #1e1e1e;
   border-radius: 5px;
   font-size: 16px;
+  color: #1e1e1e;
 }
 
 input[type="text"]:focus {
-  border-color: #636363;
+  border-color: #1e1e1e;
   outline: none;
   transition: border-color 0.3s;
 }
-
 #routesTable {
   margin: 0 auto;
   border-collapse: collapse;
@@ -178,6 +178,7 @@ button:hover {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: #1e1e1e;
 }
 
 .modal-content {
@@ -187,6 +188,7 @@ button:hover {
   border: 1px solid #ddd;
   width: 80%;
   max-width: 600px;
+  color: #1e1e1e;
 }
 
 .close {

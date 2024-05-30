@@ -13,13 +13,12 @@
   <body>
     <div class="container">
       <header>
-        <h1>Angkot Route Manager</h1>
-        <a href="../index.html" id="mainPageLink">Back to Main Page</a>
-        <!-- Link to Main Page with id -->
+        <h1>Rute Angkot Manajer</h1>
         <button id="logoutBtn">Logout</button>
       </header>
+      <a href="../index.html" id="mainPageLink">Kembali ke halaman utama</a>
       <main>
-        <h2>Manage Routes</h2>
+        <h2>Kelola Rute</h2>
         <table id="routesTable" class="u-full-width">
           <thead>
             <tr>
@@ -27,19 +26,21 @@
               <th>Jam Operasional</th>
               <th>Tarif</th>
               <th>Actions</th>
+              <!-- Add this -->
             </tr>
           </thead>
           <tbody>
             <!-- Data will be populated here -->
           </tbody>
         </table>
-        <button id="addRouteBtn">Add New Route</button>
+        <button id="addRouteBtn">Tambah Rute Baru</button>
       </main>
       <div id="routeModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
           <h2 id="modalTitle">Add Route</h2>
           <form id="routeForm">
+            <!-- Add input for route ID -->
             <input type="hidden" id="routeId" />
             <label for="rute">Rute</label>
             <input type="text" id="rute" required />
