@@ -5,7 +5,6 @@ document
     var username = prompt("Masukan username:");
     var password = prompt("Masukan password:");
 
-    // Simple hardcoded authentication for demonstration purposes
     if (username === "admin" && password === "password") {
       window.location.href = "admin/index.html";
     } else {

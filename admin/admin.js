@@ -115,3 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadRoutes();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutLink = document.getElementById("logoutLink");
+
+  logoutLink.addEventListener("click", () => {
+    alert("Logging out...");
+    window.location.href = "../index.html";
+  });
+});
