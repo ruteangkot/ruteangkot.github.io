@@ -33,7 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const rute = ruteInput.value;
     const jamOperasional = jamOperasionalInput.value;
     const tarif = tarifInput.value;
-    const routeData = { rute, jamOperasional, tarif };
+    const routeData = {
+      Rute: rute,
+      JamOperasional: jamOperasional,
+      Tarif: tarif,
+    };
 
     if (routeId) {
       // Update route
@@ -48,14 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   async function loadRoutes() {
-    const response = await fetch("/routes");
+    const response = await fetch("http://localhost:3000/routes");
     const routes = await response.json();
     routesTable.innerHTML = "";
 
     routes.forEach((route) => {
       const row = routesTable.insertRow();
       row.innerHTML = `
-                  <td>${route._id}</td>
                   <td>${route.Rute}</td>
                   <td>${route["Jam Operasional"]}</td>
                   <td>${route.Tarif}</td>
@@ -68,59 +71,36 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function createRoute(route) {
-    await fetch("/routes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(route),
-    });
+    try {
+      const response = await fetch("http://localhost:3000/routes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(route),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to create route");
+      }
+      loadRoutes(); // Reload routes after successful creation
+    } catch (error) {
+      console.error("Error creating route:", error);
+    }
   }
 
-  async function updateRoute(id, route) {
-    await fetch(`/routes/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(route),
-    });
-  }
-
-  async function deleteRoute(id) {
-    await fetch(`/routes/${id}`, {
-      method: "DELETE",
-    });
-    loadRoutes();
-  }
-
-  window.editRoute = (id, rute, jamOperasional, tarif) => {
-    openModal(id, rute, jamOperasional, tarif);
-  };
-
-  function openModal(id = "", rute = "", jamOperasional = "", tarif = "") {
-    routeIdInput.value = id;
-    ruteInput.value = rute;
-    jamOperasionalInput.value = jamOperasional;
-    tarifInput.value = tarif;
-    modalTitle.textContent = id ? "Edit Rute" : "Tambah Rute";
+  function openModal() {
+    routeIdInput.value = "";
+    ruteInput.value = "";
+    jamOperasionalInput.value = "";
+    tarifInput.value = "";
+    modalTitle.innerText = "Add Route";
+    saveRouteBtn.innerText = "Add";
     routeModal.style.display = "block";
   }
 
   function closeModal() {
     routeModal.style.display = "none";
-    routeForm.reset();
-    routeIdInput.value = "";
   }
 
   loadRoutes();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const logoutLink = document.getElementById("logoutLink");
-
-  logoutLink.addEventListener("click", () => {
-    alert("Logging out...");
-    window.location.href = "../index.html";
-  });
 });
