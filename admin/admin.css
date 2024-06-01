@@ -191,6 +191,14 @@ button:hover {
   color: #1e1e1e;
 }
 
+.edit-btn {
+  color: #ddd;
+}
+
+.delete-btn {
+  color: #ddd;
+}
+
 .close {
   color: #aaa;
   float: right;

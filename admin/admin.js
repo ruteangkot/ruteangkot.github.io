@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
                   <td>${route["Jam Operasional"]}</td>
                   <td>${route.Tarif}</td>
                   <td>
-                      <button onclick="editRoute('${route._id}', '${route.Rute}', '${route["Jam Operasional"]}', '${route.Tarif}')">Edit</button>
-                      <button onclick="deleteRoute('${route._id}')">Delete</button>
+                      <button class="edit-btn" onclick="editRoute('${route._id}', '${route.Rute}', '${route["Jam Operasional"]}', '${route.Tarif}')">Edit</button>
+                      <button class="delete-btn" onclick="deleteRoute('${route._id}')">Delete</button>
                   </td>
               `;
     });
