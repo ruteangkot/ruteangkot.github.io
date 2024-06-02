@@ -34,11 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     if (routeId) {
-      await editRoute(routeId, routeData); // Menghapus "editModal," karena tidak diperlukan
+      // Jika routeId diberikan, maka jalankan fungsi editRoute
+      await editRoute(routeId, routeData);
+    } else if (confirm("Apakah Anda yakin ingin menghapus rute?")) {
+      // Jika tidak ada routeId, tampilkan konfirmasi dan jalankan fungsi deleteRoute jika dikonfirmasi
+      await deleteRoute(routeId);
     } else {
+      // Jika tidak dikonfirmasi, jalankan fungsi createRoute
       await createRoute(routeData);
     }
-
     closeModal();
     loadRoutes();
   });
@@ -56,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>${route.Tarif}</td>
         <td>
           <button class="edit-btn">Edit</button>
-          <button class="delete-btn" onclick="deleteRoute('${route._id}')">Delete</button>
+          <button class="delete-btn">Delete</button>
         </td>
       `;
 
@@ -64,6 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const editButton = row.querySelector(".edit-btn");
       editButton.addEventListener("click", () => {
         editModal(route._id, route.Rute, route["Jam Operasional"], route.Tarif);
+      });
+
+      // Menambahkan event listener untuk tombol "Delete"
+      const deleteButton = row.querySelector(".delete-btn");
+      deleteButton.addEventListener("click", async () => {
+        if (confirm("Apakah Anda yakin ingin menghapus rute?")) {
+          await deleteRoute(route._id);
+        }
       });
     });
   }
@@ -112,6 +124,20 @@ document.addEventListener("DOMContentLoaded", () => {
     modalTitle.innerText = "Edit Route";
     saveRouteBtn.innerText = "Update";
     routeModal.style.display = "block";
+  }
+
+  async function deleteRoute(routeId) {
+    try {
+      const response = await fetch(`http://localhost:3000/routes/${routeId}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error("Failed to delete route");
+      }
+      loadRoutes(); // Memuat ulang daftar rute setelah menghapus
+    } catch (error) {
+      console.error("Error deleting route:", error);
+    }
   }
 
   function openModal() {
