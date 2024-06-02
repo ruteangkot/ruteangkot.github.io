@@ -13,14 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const saveRouteBtn = document.getElementById("saveRouteBtn");
   const closeModalBtn = document.getElementsByClassName("close")[0];
 
-  addRouteBtn.addEventListener("click", () => {
-    openModal();
-  });
-
-  closeModalBtn.addEventListener("click", () => {
-    closeModal();
-  });
-
+  addRouteBtn.addEventListener("click", openModal);
+  closeModalBtn.addEventListener("click", closeModal);
   window.onclick = (event) => {
     if (event.target === routeModal) {
       closeModal();
@@ -40,10 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     if (routeId) {
-      // Update route
-      await updateRoute(routeId, routeData);
+      await editRoute(routeId, routeData); // Menghapus "editModal," karena tidak diperlukan
     } else {
-      // Create new route
       await createRoute(routeData);
     }
 
@@ -59,14 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
     routes.forEach((route) => {
       const row = routesTable.insertRow();
       row.innerHTML = `
-                  <td>${route.Rute}</td>
-                  <td>${route["Jam Operasional"]}</td>
-                  <td>${route.Tarif}</td>
-                  <td>
-                      <button class="edit-btn" onclick="editRoute('${route._id}', '${route.Rute}', '${route["Jam Operasional"]}', '${route.Tarif}')">Edit</button>
-                      <button class="delete-btn" onclick="deleteRoute('${route._id}')">Delete</button>
-                  </td>
-              `;
+        <td>${route.Rute}</td>
+        <td>${route["Jam Operasional"]}</td>
+        <td>${route.Tarif}</td>
+        <td>
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn" onclick="deleteRoute('${route._id}')">Delete</button>
+        </td>
+      `;
+
+      // Menambahkan event listener untuk tombol "Edit"
+      const editButton = row.querySelector(".edit-btn");
+      editButton.addEventListener("click", () => {
+        editModal(route._id, route.Rute, route["Jam Operasional"], route.Tarif);
+      });
     });
   }
 
@@ -82,10 +80,38 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error("Failed to create route");
       }
-      loadRoutes(); // Reload routes after successful creation
+      loadRoutes();
     } catch (error) {
       console.error("Error creating route:", error);
     }
+  }
+
+  async function editRoute(routeId, route) {
+    try {
+      const response = await fetch(`http://localhost:3000/routes/${routeId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(route),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to update route");
+      }
+      loadRoutes();
+    } catch (error) {
+      console.error("Error updating route:", error);
+    }
+  }
+
+  function editModal(id, rute, jamOperasional, tarif) {
+    routeIdInput.value = id;
+    ruteInput.value = rute;
+    jamOperasionalInput.value = jamOperasional;
+    tarifInput.value = tarif;
+    modalTitle.innerText = "Edit Route";
+    saveRouteBtn.innerText = "Update";
+    routeModal.style.display = "block";
   }
 
   function openModal() {
@@ -102,5 +128,5 @@ document.addEventListener("DOMContentLoaded", () => {
     routeModal.style.display = "none";
   }
 
-  loadRoutes();
+  loadRoutes(); // Memuat rute saat dokumen dimuat
 });
