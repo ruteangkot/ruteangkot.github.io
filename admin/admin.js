@@ -87,7 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(route),
+        body: JSON.stringify({
+          Rute: route.Rute,
+          "Jam Operasional": route.JamOperasional, // Menggunakan kunci "Jam Operasional"
+          Tarif: route.Tarif,
+        }),
       });
       if (!response.ok) {
         throw new Error("Failed to create route");
@@ -105,7 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(route),
+        body: JSON.stringify({
+          Rute: route.Rute,
+          "Jam Operasional": route.JamOperasional, // Menggunakan kunci "Jam Operasional"
+          Tarif: route.Tarif,
+        }),
       });
       if (!response.ok) {
         throw new Error("Failed to update route");
