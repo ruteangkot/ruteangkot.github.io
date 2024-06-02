@@ -82,17 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function createRoute(route) {
     try {
-      const response = await fetch("http://localhost:3000/routes", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Rute: route.Rute,
-          "Jam Operasional": route.JamOperasional, // Menggunakan kunci "Jam Operasional"
-          Tarif: route.Tarif,
-        }),
-      });
+      const response = await fetch(
+        "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Rute: route.Rute,
+            "Jam Operasional": route.JamOperasional, // Menggunakan kunci "Jam Operasional"
+            Tarif: route.Tarif,
+          }),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to create route");
       }
@@ -104,17 +107,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function editRoute(routeId, route) {
     try {
-      const response = await fetch(`http://localhost:3000/routes/${routeId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Rute: route.Rute,
-          "Jam Operasional": route.JamOperasional, // Menggunakan kunci "Jam Operasional"
-          Tarif: route.Tarif,
-        }),
-      });
+      const response = await fetch(
+        `https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/update/${routeId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Rute: route.Rute,
+            "Jam Operasional": route.JamOperasional, // Menggunakan kunci "Jam Operasional"
+            Tarif: route.Tarif,
+          }),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to update route");
       }
@@ -136,9 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function deleteRoute(routeId) {
     try {
-      const response = await fetch(`http://localhost:3000/routes/${routeId}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/delete/${routeId}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to delete route");
       }
