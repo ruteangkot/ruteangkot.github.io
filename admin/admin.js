@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   async function loadRoutes() {
-    const response = await fetch("http://localhost:3000/routes");
+    const response = await fetch(
+      "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/data"
+    );
     const routes = await response.json();
     routesTable.innerHTML = "";
 
