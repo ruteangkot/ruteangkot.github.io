@@ -36,9 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (routeId) {
       // Jika routeId diberikan, maka jalankan fungsi editRoute
       await editRoute(routeId, routeData);
-    } else if (confirm("Apakah Anda yakin ingin menghapus rute?")) {
-      // Jika tidak ada routeId, tampilkan konfirmasi dan jalankan fungsi deleteRoute jika dikonfirmasi
-      await deleteRoute(routeId);
     } else {
       // Jika tidak dikonfirmasi, jalankan fungsi createRoute
       await createRoute(routeData);
