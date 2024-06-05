@@ -1,11 +1,19 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Freeman&display=swap");
+
+html {
+  font-size: 1vw;
+  table-layout: fixed;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  height: 100vh;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  font-family: "Freeman", sans-serif;
+  background-color: #f2f2f2;
 }
 
 .login-container {
@@ -34,10 +42,11 @@ label {
 input[type="text"],
 input[type="password"] {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 16px;
 }
 
 button {
@@ -52,4 +61,43 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 2vw;
+  }
+
+  .login-container {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  .login-container {
+    background-color: #1e1e1e;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+  }
+
+  button {
+    background-color: #333;
+    color: #e0e0e0;
+  }
+
+  button:hover {
+    background-color: #555;
+  }
 }
