@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>${route["Jam Operasional"]}</td>
         <td>${route.Tarif}</td>
         <td>
-          <button class="edit-btn">Edit</button>
-          <button class="delete-btn">Delete</button>
+          <button class="edit-btn"><span>Edit</span></button>
+          <button class="delete-btn"><span>Delete</span></button>
         </td>
       `;
 
