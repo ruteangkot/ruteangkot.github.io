@@ -95,6 +95,12 @@ html {
     .delete-btn span {
       display: none;
     }
+    .edit-btn {
+      background-image: url("../Image/pencil.png");
+    }
+    .delete-btn {
+      background-image: url("../Image/x.png");
+    }
   }
 }
 
