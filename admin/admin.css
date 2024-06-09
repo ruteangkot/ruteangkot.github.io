@@ -26,30 +26,61 @@ html {
   main {
     padding: 5px;
   }
-  #routesTable {
-    display: block;
+  #routesTableWrapper {
+    width: 100%;
     overflow-x: auto;
   }
-  #routesTable th,
-  #routesTable td {
-    display: block;
-    width: 100%;
-    text-align: left;
-    box-sizing: border-box;
-    word-wrap: break-word;
-  }
-  #routesTable th {
-    background-color: transparent;
-    color: #333;
-    font-weight: bold;
-  }
-  #routesTable td {
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-  #routesTable tr {
-    display: block;
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     margin-bottom: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .card-header {
+    font-weight: bold;
+    color: #4b4b4b;
+    margin-bottom: 10px;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-body > div {
+    margin-bottom: 5px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+  .edit-btn,
+  .delete-btn {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .edit-btn {
+    background-color: #4caf50;
+    color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
@@ -105,11 +136,18 @@ input[type="text"]:focus {
   outline: none;
   transition: border-color 0.3s;
 }
+
+#routesTableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 #routesTable {
   margin: 0 auto;
   border-collapse: collapse;
   width: 100%;
   max-width: 100%;
+  table-layout: auto;
 }
 
 #routesTable th,
@@ -251,5 +289,22 @@ button:hover {
 
   #routesTable tr:hover {
     background-color: #3d3d3d;
+  }
+
+  .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    box-shadow: none;
+  }
+  .card-header {
+    color: #ddd;
+  }
+  .edit-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
   }
 }
