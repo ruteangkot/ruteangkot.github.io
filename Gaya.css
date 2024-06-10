@@ -24,6 +24,9 @@ html {
   img {
     width: 50%;
   }
+  .footer {
+    align-items: center;
+  }
 }
 
 #data-container {
@@ -126,9 +129,16 @@ footer {
   color: #f8f9fa;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
   height: 50px;
   width: 100%;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+footer * {
   margin: 0;
   padding: 0;
 }
