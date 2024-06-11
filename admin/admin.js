@@ -66,14 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Menambahkan event listener untuk tombol "Edit"
       const editButton = row.querySelector(".edit-btn");
       editButton.addEventListener("click", () => {
-        editModal(route._id, route.Rute, route["Jam Operasional"], route.Tarif);
+        editModal(route.id, route.Rute, route["Jam Operasional"], route.Tarif);
       });
 
       // Menambahkan event listener untuk tombol "Delete"
       const deleteButton = row.querySelector(".delete-btn");
       deleteButton.addEventListener("click", async () => {
         if (confirm("Apakah Anda yakin ingin menghapus rute?")) {
-          await deleteRoute(route._id);
+          await deleteRoute(route.id);
         }
       });
     });
