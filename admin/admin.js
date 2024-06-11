@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     routeModal.style.display = "block";
   }
 
-  async function deleteRoute(routeId) {
+  async function deleteRoute(route) {
     try {
       const response = await fetch(
         `https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/data`,
