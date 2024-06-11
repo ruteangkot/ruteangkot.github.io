@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function editRoute(routeId, route) {
     try {
       const response = await fetch(
-        `https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/data/${routeId}`,
+        `https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/data`,
         {
           method: "PUT",
           headers: {
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function deleteRoute(routeId) {
     try {
       const response = await fetch(
-        `https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/data/${routeId}`,
+        `https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/data`,
         {
           method: "DELETE",
         }
