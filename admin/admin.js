@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const jamOperasional = jamOperasionalInput.value;
     const tarif = tarifInput.value;
     const routeData = {
+      id: routeId,
       Rute: rute,
       JamOperasional: jamOperasional,
       Tarif: tarif,
