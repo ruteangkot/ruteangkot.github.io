@@ -147,6 +147,12 @@ document.addEventListener("DOMContentLoaded", () => {
         `https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/data`,
         {
           method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: route.id,
+          }),
         }
       );
       if (!response.ok) {
