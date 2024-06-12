@@ -1,38 +1,36 @@
-document
-  .getElementById("login-form")
-  .addEventListener("submit", function (event) {
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
+
+  loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // Membuat objek payload untuk dikirim ke server
-    const payload = {
-      username: username,
-      password: password,
-    };
-
-    // Mengirim permintaan POST ke server
-    fetch("/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Memeriksa respons JSON dari server
-        if (data.message === "Login successful!") {
-          alert(data.message);
-          // Redirect ke halaman admin jika login berhasil
-          window.location.href = "../admin/index.html";
-        } else {
-          alert(data.error || "Invalid username or password");
+    try {
+      const response = await fetch(
+        "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
         }
-      })
-      .catch((error) => {
-        console.error("There was an error:", error);
-        alert("An error occurred. Please try again later.");
-      });
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Login successful");
+        // Redirect to the dashboard or another page
+        window.location.href = "../admin/admin.html";
+      } else {
+        alert("Login failed: " + data.error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while trying to log in.");
+    }
   });
+});
