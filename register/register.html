@@ -3,36 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Registrasi</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Register</title>
+    <script src="register.js"></script>
   </head>
   <body>
-    <h2>Form Registrasi</h2>
+    <h2>Register</h2>
     <form id="registerForm">
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required />
-      <br />
-
+      <input type="text" id="username" name="username" required /><br /><br />
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-      <br />
-
+      <input type="email" id="email" name="email" required /><br /><br />
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
-      <br />
-
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+      /><br /><br />
       <label for="confirmPassword">Confirm Password:</label>
       <input
         type="password"
         id="confirmPassword"
         name="confirmPassword"
         required
-      />
-      <br />
-
+      /><br /><br />
       <button type="submit">Register</button>
     </form>
-
-    <script src="script.js"></script>
   </body>
 </html>
