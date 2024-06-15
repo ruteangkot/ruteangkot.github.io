@@ -21,7 +21,16 @@
         </div>
         <button type="submit">Login</button>
       </form>
+      <p>
+        Don't have an account? <button id="register-button">Register</button>
+      </p>
     </div>
-    <script src="login.js"></script>
+    <script>
+      document
+        .getElementById("register-button")
+        .addEventListener("click", function () {
+          window.location.href = "ruteangkot.github.io/register/register.html";
+        });
+    </script>
   </body>
 </html>

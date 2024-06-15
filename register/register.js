@@ -1,41 +1,34 @@
-document
-  .getElementById("registerForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+document.getElementById('register-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
 
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+  if (password !== confirmPassword) {
+    alert('Passwords do not match');
+    return;
+  }
 
-    if (username.length < 3) {
-      alert("Username harus lebih dari 2 karakter");
-      return;
+  // Send registration data to the server
+  fetch('/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert('Registration successful!');
+      window.location.href = 'login.html';
+    } else {
+      alert('Registration failed: ' + data.message);
     }
-
-    if (password !== confirmPassword) {
-      alert("Password dan konfirmasi password tidak cocok");
-      return;
-    }
-
-    const data = {
-      username: username,
-      email: email,
-      password: password,
-    };
-
-    fetch("http://localhost:3000/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        alert(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Registration failed: ' + error.message);
   });
+});

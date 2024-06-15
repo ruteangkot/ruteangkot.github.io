@@ -16,7 +16,7 @@ body {
   background-color: #f2f2f2;
 }
 
-.login-container {
+.register-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -27,8 +27,6 @@ body {
 
 h2 {
   margin-bottom: 20px;
-  font-size: 1.5em;
-  color: #333;
 }
 
 .form-group {
@@ -39,18 +37,17 @@ h2 {
 label {
   display: block;
   margin-bottom: 5px;
-  font-size: 1em;
-  color: #555;
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 button {
@@ -61,11 +58,6 @@ button {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.5;
 }
 
 button:hover {
@@ -77,7 +69,7 @@ button:hover {
     font-size: 2vw;
   }
 
-  .login-container {
+  .register-container {
     width: 90%;
     padding: 15px;
   }
@@ -90,11 +82,12 @@ button:hover {
     color: #e0e0e0;
   }
 
-  .login-container {
+  .register-container {
     background-color: #1e1e1e;
   }
 
   input[type="text"],
+  input[type="email"],
   input[type="password"] {
     background-color: #333;
     color: #e0e0e0;
