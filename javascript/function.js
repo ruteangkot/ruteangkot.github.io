@@ -43,22 +43,25 @@ function displayData(data) {
 
 //Placeholder
 function cari() {
-  var input, filter, table, tr, td, i, txtValue;
+  var input, filter, table, tr, td, i, j, txtValue;
   input = document.getElementById("inputCari");
   filter = input.value.toUpperCase();
   table = document.querySelector("#data-container table");
   tr = table.getElementsByTagName("tr");
 
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
+  for (i = 1; i < tr.length; i++) {
+    var rowVisible = false;
+    td = tr[i].getElementsByTagName("td");
+    for (j = 0; j < td.length; j++) {
+      if (td[j]) {
+        txtValue = td[j].textContent || td[j].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          rowVisible = true;
+          break;
+        }
       }
     }
+    tr[i].style.display = rowVisible ? "" : "none";
   }
 }
 
