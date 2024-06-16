@@ -87,6 +87,7 @@ input[type="text"]:focus {
   border-color: #636363;
   outline: none;
   transition: border-color 0.3s;
+  color: #121212;
 }
 
 /*Mengatur Table*/
