@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error("Failed to create route");
       }
+      alert("Berhasil Menambahkan Rute!");
       loadRoutes();
     } catch (error) {
       console.error("Error creating route:", error);
