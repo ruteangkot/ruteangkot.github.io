@@ -84,10 +84,10 @@ html {
     display: none;
   }
   .edit-btn {
-    background-image: url("../Image/pencil.png"); /* Adjust path as needed */
+    background-image: url("../Image/pencil.png");
   }
   .delete-btn {
-    background-image: url("../Image/x.png"); /* Adjust path as needed */
+    background-image: url("../Image/x.png");
   }
   .container {
     padding: 5px;
@@ -95,14 +95,14 @@ html {
   #routesTable td .button-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5px; /* Jarak antara tombol */
+    gap: 5px;
     width: 100%;
-    padding: 0 10px; /* Tambahkan padding untuk memberi jarak dari tepi kolom */
+    padding: 0 10px;
   }
 
   #routesTable td .edit-btn,
   #routesTable td .delete-btn {
-    width: 100%; /* Tombol akan mengisi seluruh lebar kolom */
+    width: 100%;
     padding: 10px;
     font-size: 14px;
     text-align: center;
@@ -284,8 +284,7 @@ button:hover {
     color: #e0e0e0;
   }
 
-  header,
-  footer {
+  header {
     background-color: #1e1e1e;
     color: #e0e0e0;
   }
