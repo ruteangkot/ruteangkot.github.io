@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error("Failed to update route");
       }
+      alert("Rute Berhasil Di Update!");
       loadRoutes();
     } catch (error) {
       console.error("Error updating route:", error);
