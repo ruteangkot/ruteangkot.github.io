@@ -1,34 +1,27 @@
-document.getElementById('register-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  const confirmPassword = document.getElementById('confirm-password').value;
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-  if (password !== confirmPassword) {
-    alert('Passwords do not match');
-    return;
-  }
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-  // Send registration data to the server
-  fetch('/register', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ username, password })
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      alert('Registration successful!');
-      window.location.href = 'login.html';
+    const response = await fetch("/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const message = document.getElementById("message");
+    if (response.status === 201) {
+      message.textContent = "Registration successful! Redirecting to login...";
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 2000);
     } else {
-      alert('Registration failed: ' + data.message);
+      const errorData = await response.json();
+      message.textContent = `Error: ${errorData.error}`;
     }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('Registration failed: ' + error.message);
   });
-});
