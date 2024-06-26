@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const loginLink = document.getElementById("login-link");
+
+  loginLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = "https://ruteangkot.github.io/login/login.html";
+  });
+});
+
 document
   .getElementById("registerForm")
   .addEventListener("submit", async function (event) {
