@@ -59,6 +59,9 @@ button {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
@@ -112,6 +115,9 @@ a:hover {
   button {
     background-color: #4caf50;
     color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   button:hover {
