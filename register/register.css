@@ -106,7 +106,7 @@ a:hover {
   input[type="text"],
   input[type="email"],
   input[type="password"],
-  input[type="confrim"] {
+  input[type="confirm"] {
     background-color: #333;
     color: #e0e0e0;
     border-color: #555;
