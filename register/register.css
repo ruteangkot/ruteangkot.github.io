@@ -41,7 +41,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="confirm"] {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -101,7 +102,8 @@ a:hover {
 
   input[type="text"],
   input[type="email"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="confrim"] {
     background-color: #333;
     color: #e0e0e0;
     border-color: #555;
