@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   logoutLink.addEventListener("click", (event) => {
     event.preventDefault();
-    window.location.href = "https://ruteangkot.github.io/";
+    const userConfirmed = confirm("Apakah Anda yakin ingin keluar?");
+    if (userConfirmed) {
+      window.location.href = "https://ruteangkot.github.io/";
+    }
   });
 
   addRouteBtn.addEventListener("click", openModal);
