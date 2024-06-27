@@ -37,7 +37,8 @@ document
     if (response.status === 201) {
       message.textContent = "Registration successful! Redirecting to login...";
       setTimeout(() => {
-        window.location.href = "login.html";
+        window.location.href =
+          "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/login";
       }, 2000);
     } else {
       const errorData = await response.json();
