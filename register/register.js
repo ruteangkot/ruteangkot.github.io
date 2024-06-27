@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loginLink.addEventListener("click", (event) => {
     event.preventDefault();
     window.location.href =
-      "https://rutenagkot.github.io/login";
+      "https://rutenagkot.github.io/login/login.html";
   });
 });
 
