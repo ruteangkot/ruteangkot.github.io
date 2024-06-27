@@ -21,12 +21,18 @@ function loadData() {
 }
 
 // connect admin
-const adminlink = document.getElementById("adminLink");
-adminlink.addEventListener("click", (event) => {
-  event.preventDefault();
-  window.location.href(
-    "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/register"
-  );
+document.addEventListener("DOMContentLoaded", () => {
+  const adminLink = document.getElementById("adminLink");
+  if (adminLink) {
+    // Pastikan adminLink tidak null
+    adminLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.location.href =
+        "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/register";
+    });
+  } else {
+    console.error("Element with id 'adminLink' not found.");
+  }
 });
 
 function displayData(data) {
