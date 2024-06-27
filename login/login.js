@@ -17,7 +17,7 @@ document
     const password = document.getElementById("password").value;
 
     const loginDetail = {
-      username: email,
+      email: email,
       password: password,
     };
 
