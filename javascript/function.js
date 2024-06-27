@@ -1,5 +1,3 @@
-//Connect js
-
 //Connect HTML
 function loadData() {
   var xhr = new XMLHttpRequest();
