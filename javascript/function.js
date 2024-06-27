@@ -1,3 +1,11 @@
+//Connect js
+const adminlink = getElementById("adminLink");
+
+adminlink.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.href("https://ruteangkot.github.io/admin");
+});
+
 //Connect HTML
 function loadData() {
   var xhr = new XMLHttpRequest();
