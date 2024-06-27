@@ -21,7 +21,7 @@ document
       password: password,
     };
 
-    const response = await fetch("https://ruteangkotbackend/login", {
+    const response = await fetch("https://ruteangkotbackend/akun", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
