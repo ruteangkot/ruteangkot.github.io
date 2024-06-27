@@ -22,13 +22,16 @@ document
       return;
     }
 
-    const response = await fetch("https://ruteangkotbackend/akun", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, email, password }),
-    });
+    const response = await fetch(
+      "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, email, password }),
+      }
+    );
 
     const message = document.getElementById("message");
     if (response.status === 201) {
