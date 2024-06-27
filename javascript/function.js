@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     adminLink.addEventListener("click", (event) => {
       event.preventDefault();
       window.location.href =
-        "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/register";
+        "https://ruteangkot.github.io/register/register.html";
     });
   } else {
     console.error("Element with id 'adminLink' not found.");
