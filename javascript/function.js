@@ -24,7 +24,7 @@ function loadData() {
 const adminlink = document.getElementById("adminLink");
 adminlink.addEventListener("click", (event) => {
   event.preventDefault();
-  window.location.href("https://ruteangkot.github.io/admin");
+  window.location.href("https://ruteangkot.github.io/register/register.html");
 });
 
 function displayData(data) {
