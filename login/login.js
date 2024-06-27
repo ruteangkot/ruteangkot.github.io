@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loginLink.addEventListener("click", (event) => {
     event.preventDefault();
     window.location.href =
-      "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/register";
+      "https://ruteangkot.github.io/register/register.html";
   });
 });
 
@@ -34,7 +34,7 @@ document
 
     const message = document.getElementById("message");
     if (response.status === 200) {
-      message.textContent = "Login successful! Redirecting...";
+      message.textContent = "Login nya berhasil mangg! Tunggu sebentar...";
       setTimeout(() => {
         window.location.href = "https://ruteangkot.github.io/admin/";
         login;
