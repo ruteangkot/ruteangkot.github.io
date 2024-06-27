@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const addRouteBtn = document.getElementById("addRouteBtn");
   const saveRouteBtn = document.getElementById("saveRouteBtn");
   const closeModalBtn = document.getElementsByClassName("close")[0];
+  const logoutLink = document.getElementById("logoutLink");
+
+  logoutLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = "https://ruteangkot.github.io/";
+  });
 
   addRouteBtn.addEventListener("click", openModal);
   closeModalBtn.addEventListener("click", closeModal);

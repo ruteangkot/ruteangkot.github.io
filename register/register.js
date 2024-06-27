@@ -38,8 +38,7 @@ document
     if (response.status === 201) {
       message.textContent = "Registration successful! Redirecting to login...";
       setTimeout(() => {
-        window.location.href =
-          "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/login";
+        window.location.href = "https://ruteangkot.github.io/admin";
       }, 2000);
     } else {
       const errorData = await response.json();
