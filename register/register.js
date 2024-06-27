@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loginLink.addEventListener("click", (event) => {
     event.preventDefault();
-    window.location.href = "https://ruteangkot.github.io/login/login.html";
+    window.location.href = "https://ruteangkot.github.io/admin/index.html";
   });
 });
 
