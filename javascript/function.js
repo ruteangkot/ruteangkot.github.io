@@ -24,7 +24,9 @@ function loadData() {
 const adminlink = document.getElementById("adminLink");
 adminlink.addEventListener("click", (event) => {
   event.preventDefault();
-  window.location.href("https://ruteangkot.github.io/register/register.html");
+  window.location.href(
+    "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/register"
+  );
 });
 
 function displayData(data) {
