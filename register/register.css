@@ -1,5 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Freeman&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
 html {
   font-size: 1vw;
@@ -81,6 +82,18 @@ a:hover {
   text-decoration: underline;
 }
 
+.form-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 2vw;
@@ -89,6 +102,18 @@ a:hover {
   .form-container {
     width: 90%;
     padding: 15px;
+  }
+
+  .form-group {
+    position: relative;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
   }
 }
 

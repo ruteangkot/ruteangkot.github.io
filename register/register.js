@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const type =
       password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
-    togglePassword.textContent = type === "password" ? "Show" : "Hide";
+    togglePassword.classList.toggle("fa-eye-slash");
   });
 
   toggleConfirmPassword.addEventListener("click", () => {
     const type =
       confirmPassword.getAttribute("type") === "password" ? "text" : "password";
     confirmPassword.setAttribute("type", type);
-    toggleConfirmPassword.textContent = type === "password" ? "Show" : "Hide";
+    toggleConfirmPassword.classList.toggle("fa-eye-slash");
   });
 
   document
