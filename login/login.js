@@ -42,5 +42,8 @@ document
     } else {
       const errorData = await response.json();
       message.textContent = `Error: ${errorData.error}`;
+      if (errorData.error.toLowerCase().includes("password")) {
+        alert("Password salah nih. Coba lagi.");
+      }
     }
   });
