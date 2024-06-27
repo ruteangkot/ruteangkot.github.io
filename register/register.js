@@ -22,7 +22,7 @@ document
       return;
     }
 
-    const response = await fetch("/register", {
+    const response = await fetch("https://ruteangkotbackend/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
