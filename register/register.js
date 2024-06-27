@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loginLink.addEventListener("click", (event) => {
     event.preventDefault();
     window.location.href =
-      "https://rutenagkot.github.io/login/login.html";
+      "https://asia-southeast2-awangga.cloudfunctions.net/ruteangkot/login";
   });
 });
 
