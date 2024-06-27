@@ -93,6 +93,10 @@ a:hover {
   transform: translateY(-50%);
   cursor: pointer;
 }
+.form-group input {
+  width: calc(100% - 40px);
+  padding-right: 30px;
+}
 
 @media (max-width: 768px) {
   html {
@@ -114,6 +118,10 @@ a:hover {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+  }
+  .form-group input {
+    width: calc(100% - 40px);
+    padding-right: 30px;
   }
 }
 
