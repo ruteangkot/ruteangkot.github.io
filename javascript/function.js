@@ -20,6 +20,13 @@ function loadData() {
   xhr.send();
 }
 
+// connect admin
+const adminlink = document.getElementById("adminLink");
+adminlink.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.href("https://ruteangkot.github.io/admin");
+});
+
 function displayData(data) {
   var container = document.getElementById("data-container");
   var html = "";
