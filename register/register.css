@@ -94,6 +94,13 @@ a:hover {
   cursor: pointer;
 }
 
+.fas.fa-eye {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #aaa;
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 2vw;
