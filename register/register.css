@@ -40,6 +40,12 @@ label {
   margin-bottom: 5px;
 }
 
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -86,7 +92,7 @@ a:hover {
   position: absolute;
   right: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-40%);
   cursor: pointer;
 }
 
@@ -96,7 +102,7 @@ a:hover {
   cursor: pointer;
   color: #aaa;
   font-size: 1.2em;
-  top: 50%;
+  top: 35%;
   transform: translateY(-50%);
 }
 
@@ -116,6 +122,15 @@ a:hover {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+  }
+  .fas.fa-eye {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 1.2em;
+    top: 35%;
+    transform: translateY(-50%);
   }
 }
 
