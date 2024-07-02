@@ -41,8 +41,7 @@ if (adminLink) {
   // Pastikan adminLink tidak null
   adminLink.addEventListener("click", (event) => {
     event.preventDefault();
-    window.location.href =
-      "https://ruteangkot.github.io/register/register.html";
+    window.location.href = "https://ruteangkot.github.io/login/login.html";
   });
 } else {
   console.error("Element with id 'adminLink' not found.");
