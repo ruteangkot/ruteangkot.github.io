@@ -23,17 +23,30 @@ function loadData() {
 // connect admin
 document.addEventListener("DOMContentLoaded", () => {
   const adminLink = document.getElementById("adminLink");
-  if (adminLink) {
+  const instagram = document.getElementById("instagram");
+
+  if (instagram) {
     // Pastikan adminLink tidak null
-    adminLink.addEventListener("click", (event) => {
+    instagram.addEventListener("click", (event) => {
       event.preventDefault();
       window.location.href =
-        "https://ruteangkot.github.io/register/register.html";
+        "https://www.instagram.com/naikangkot.bdg?igsh=MWJndzVodnNienRwbQ%3D%3D";
     });
   } else {
-    console.error("Element with id 'adminLink' not found.");
+    console.error("Element with id 'instagram' not found.");
   }
 });
+
+if (adminLink) {
+  // Pastikan adminLink tidak null
+  adminLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href =
+      "https://ruteangkot.github.io/register/register.html";
+  });
+} else {
+  console.error("Element with id 'adminLink' not found.");
+}
 
 function displayData(data) {
   var container = document.getElementById("data-container");
