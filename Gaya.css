@@ -72,7 +72,10 @@ main {
   margin-bottom: 5%;
   font-style: italic;
 }
-
+.text:hover {
+  color: #ff00dd;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
 /*Mengatur kolom input*/
 input {
   width: 100%;
