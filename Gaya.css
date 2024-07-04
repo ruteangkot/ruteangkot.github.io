@@ -114,6 +114,7 @@ td {
   padding: 8px;
   text-align: center;
   width: 10%;
+  cursor: pointer;
 }
 
 th {
