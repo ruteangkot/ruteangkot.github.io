@@ -52,6 +52,7 @@ img {
   margin-top: 2%;
   height: auto;
   max-width: 100%;
+  cursor: pointer;
 }
 
 header {
@@ -71,10 +72,15 @@ main {
   margin-top: 2%;
   margin-bottom: 5%;
   font-style: italic;
+  transition: 0.3s;
+  position: relative;
+  display: inline-block;
 }
 .text:hover {
-  color: #eaff00;
+  color: transparent;
   transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-text-stroke: 1px #ffee00;
+  cursor: pointer;
 }
 /*Mengatur kolom input*/
 input {
