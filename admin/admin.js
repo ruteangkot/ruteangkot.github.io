@@ -14,6 +14,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModalBtn = document.getElementsByClassName("close")[0];
   const logoutLink = document.getElementById("logoutLink");
 
+  tarifInput.addEventListener("input", () => {
+    let tarifValue = tarifInput.value.trim();
+    if (!tarifValue.startsWith("Rp")) {
+      tarifValue = "Rp " + tarifValue;
+    }
+    tarifInput.value = tarifValue;
+  });
+
+  tarifInput.addEventListener("focus", () => {
+    let tarifValue = tarifInput.value.trim();
+
+    if (tarifValue.startsWith("Rp")) {
+      tarifValue = tarifValue.slice(3);
+      tarifInput.value = tarifValue;
+    }
+  });
+
   logoutLink.addEventListener("click", (event) => {
     event.preventDefault();
     const userConfirmed = confirm("Apakah Anda yakin ingin keluar?");
