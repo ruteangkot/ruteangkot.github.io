@@ -73,7 +73,7 @@ main {
   font-style: italic;
 }
 .text:hover {
-  color: #ff00dd;
+  color: #eaff00;
   transition: cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 /*Mengatur kolom input*/
