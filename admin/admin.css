@@ -243,6 +243,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  margin-left: 10px;
 }
 
 #logoutLink:hover {

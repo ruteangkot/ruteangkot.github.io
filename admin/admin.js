@@ -164,8 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ruteInput.value = rute;
     jamOperasionalInput.value = jamOperasional;
     tarifInput.value = tarif;
-    modalTitle.innerText = "Edit Route";
-    saveRouteBtn.innerText = "Update";
+    modalTitle.innerText = "Perbarui Rute";
+    saveRouteBtn.innerText = "Perbarui";
     routeModal.style.display = "block";
   }
 
@@ -197,8 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ruteInput.value = "";
     jamOperasionalInput.value = "";
     tarifInput.value = "";
-    modalTitle.innerText = "Add Route";
-    saveRouteBtn.innerText = "Add";
+    modalTitle.innerText = "Tambah Rute";
+    saveRouteBtn.innerText = "Tambah";
     routeModal.style.display = "block";
   }
 
