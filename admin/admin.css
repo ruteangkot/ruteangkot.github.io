@@ -79,6 +79,10 @@ html {
     background-color: #f44336;
     color: white;
   }
+  #logoutLink {
+    background-color: #f44336;
+    color: white;
+  }
   .edit-btn span,
   .delete-btn span {
     display: none;
@@ -227,9 +231,22 @@ button:hover {
   color: white;
 }
 
-#logoutBtn {
+#logoutLink {
   background-color: #f44336;
   color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#logoutLink:hover {
+  background-color: #e57373;
 }
 
 .modal {
