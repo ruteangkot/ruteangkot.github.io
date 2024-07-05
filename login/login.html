@@ -27,9 +27,30 @@
       </form>
       <div id="message"></div>
       <p>
-        doesn't have an account?
+        Doesn't have an account?
         <a href="#" id="register-link">Register here...</a>
       </p>
+      <p>
+        Forgot your password?
+        <a href="#" id="reset-password-link">Reset here...</a>
+      </p>
+    </div>
+
+    <!-- Modal for Reset Password -->
+    <div id="resetPasswordModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="resetPasswordForm">
+          <h2>Reset Password</h2>
+          <input
+            type="email"
+            id="resetEmail"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit">Send Reset Link</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

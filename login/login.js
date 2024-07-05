@@ -3,13 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const togglePassword = document.getElementById("togglePassword");
   const passwordField = document.getElementById("password");
   const message = document.getElementById("message");
+  const resetPasswordLink = document.getElementById("reset-password-link");
+  const resetPasswordModal = document.getElementById("resetPasswordModal");
+  const closeModal = document.querySelector(".close");
+  const resetPasswordForm = document.getElementById("resetPasswordForm");
 
-  loginLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.location.href =
-      "https://ruteangkot.github.io/register/register.html";
-  });
-
+  // Toggle Password Visibility
   togglePassword.addEventListener("click", () => {
     const type =
       passwordField.getAttribute("type") === "password" ? "text" : "password";
@@ -17,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     togglePassword.classList.toggle("fa-eye-slash");
   });
 
+  // Handle Login
   document
     .getElementById("loginForm")
     .addEventListener("submit", async function (event) {
@@ -43,15 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         if (response.status === 200) {
-          message.textContent = "Login nya berhasil mangg! Tunggu sebentar...";
+          message.textContent = "Login berhasil! Tunggu sebentar...";
           setTimeout(() => {
             window.location.href = "https://ruteangkot.github.io/admin/";
           }, 2000);
         } else {
           const errorData = await response.json();
-          message.textContent = `Password salah nih. Coba lagi mang.`;
+          message.textContent = `Password salah. Coba lagi.`;
           if (errorData.error.toLowerCase().includes("password")) {
-            message.textContent = "Password salah nih. Coba lagi.";
+            message.textContent = "Password salah. Coba lagi.";
           }
         }
       } catch (error) {
@@ -59,4 +59,48 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Error during login:", error);
       }
     });
+
+  // Show Reset Password Modal
+  resetPasswordLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    resetPasswordModal.style.display = "block";
+  });
+
+  // Close Modal
+  closeModal.addEventListener("click", () => {
+    resetPasswordModal.style.display = "none";
+  });
+
+  // Submit Reset Password Form
+  resetPasswordForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = document.getElementById("resetEmail").value;
+
+    try {
+      const response = await fetch(
+        "http://localhost:8080/request-reset-password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const data = await response.json();
+      alert(data.message);
+      resetPasswordModal.style.display = "none";
+    } catch (error) {
+      alert(`Error: ${error.message}`);
+      console.error("Error during password reset request:", error);
+    }
+  });
+
+  // Redirect to Register Page
+  loginLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href =
+      "https://ruteangkot.github.io/register/register.html";
+  });
 });
