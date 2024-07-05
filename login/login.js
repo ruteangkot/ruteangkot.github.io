@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }, 2000);
         } else {
           const errorData = await response.json();
-          message.textContent = `Error: ${errorData.error}`;
+          message.textContent = `Password salah nih. Coba lagi mang.`;
           if (errorData.error.toLowerCase().includes("password")) {
             message.textContent = "Password salah nih. Coba lagi.";
           }
