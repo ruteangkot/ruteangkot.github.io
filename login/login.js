@@ -56,11 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-
   // Redirect to Register Page
   loginLink.addEventListener("click", (event) => {
     event.preventDefault();
     window.location.href =
       "https://ruteangkot.github.io/register/register.html";
   });
+
+  // Redirect to Reset Password Page
+  reset -
+    password -
+    form.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.location.href =
+        "https://ruteangkot.github.io/reset-password/reset-password.html";
+    });
 });
