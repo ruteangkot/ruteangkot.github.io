@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       } catch (error) {
-        message.textContent = `Error: ${error.message}`;
+        message.textContent = `Wahh password nya salah nihh. Coba lagi.`;
         console.error("Error during login:", error);
       }
     });
