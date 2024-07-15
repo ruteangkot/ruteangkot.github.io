@@ -46,7 +46,6 @@ label {
   align-items: center;
 }
 
-input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 100%;
@@ -68,6 +67,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Freeman", sans-serif;
 }
 
 button:hover {
